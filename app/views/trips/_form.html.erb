@@ -1,0 +1,75 @@
+<%= form_for(trip) do |f| %>
+  <% if trip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+
+      <ul>
+      <% trip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <link rel="stylesheet" href="style.css">
+
+    <div class="container">
+      <div class="row">
+        <!-- this needs to be adjusted but it says that on a "lg" page, 5 bootstrap rows will be taken by blank space on both sides
+        Leaving the content in the middle "centering" your input boxes" Just one solution. -->
+
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        </div>
+
+        <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
+          <div class="text-center">
+
+            <div class="field">
+              <%= f.label :To %></br>
+              <%= f.select :to, [ 'Tempe', 'Polytechnic', 'Downtown', 'West'], :prompt => 'Select Campus' %>
+            </div></br>
+
+            <div class="field">
+              <%= f.label :From %></br>
+              <%= f.select :from, [ 'Tempe', 'Polytechnic', 'Downtown', 'West'], :prompt => 'Select Campus' %>
+            </div></br>
+
+            <div class="field">
+              <%= f.label :Date %></br>
+              <%= f.date_select :date %>
+            </div></br>
+
+            <div class="field">
+              <%= f.label :Leave_Time %></br>
+              <%= f.time_select :ltime, {ampm: true, minute_step: 15} %>
+            </div></br>
+
+            <div class="field">
+              <%= f.label :Seats %>
+              <%= f.number_field :seats %>
+            </div></br>
+
+            <div class="field">
+              <%= f.label :Fare %>
+              <%= f.text_field :fare %>
+            </div></br>
+
+            <div class="field">
+              <%= f.label :user_id %>
+              <%= f.text_field :user_id %>
+            </div></br></br>
+
+            <div class="actions">
+              <%= f.submit %>
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5">
+    </div>
+
+
+<% end %>

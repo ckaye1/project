@@ -1,0 +1,80 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+  <title>DT-Home</title>
+  <!--Bootstrap links-->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/'>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="dt.css">
+  <!--DevilTransit css link-->
+
+  <style>
+    .nav {
+      background-color: #353535;
+      background-image: url(../images/DT-LOGO.png);
+      background-repeat: no-repeat;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <h1>Need A Ride?</h1>
+</div>
+
+<div class="row">
+  <div class="col-lg-8">
+    <%= image_tag ("assets/images/home.jpg") %>
+  </div>
+  <br>
+  <div class="col-md-4">
+    <div class="well">
+      <a href="/signup"><h1>Sign Up It's Free!</h1></a>
+
+      <%= form_tag sessions_path do %>
+          <div class="field">
+            <%= label_tag :email %><br>
+            <%= text_field_tag :email %>
+          </div>
+          <div class="field">
+            <%= label_tag :password %><br>
+            <%= password_field_tag :password %>
+          </div></br>
+          <div class="actions">
+            <%= submit_tag "Log In" %>
+          </div>
+          <% end %>
+          </div>
+
+          </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="well">
+              <h4>About Us </h4>
+              <p>Welcome to DevilTransit. We are the premier ride-sharing service at ASU, comitted to providing students with the ultimate experience in cost effective, peer-to-peer service</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="well">
+              <h4>Our Vision </h4>
+              <p>As DevilTransit, we strive to create a enviorment in which our drivers are given the true freedom they desire in establishing their service.
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="well">
+              <h4>Our Pledge </h4>
+              <p>Signing Up will always be free. We want to give all who sign up the freedom of essentially running their own business. Go far, share further.
+            </div>
+          </div>
+
+
+          <!--Javascript links-->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <script src="js/bootstrap.min.js"></script>
+          <!-- <%= yield %> -->
+          </body>

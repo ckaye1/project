@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>To:</strong>
+  <%= @trip.to %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @trip.from %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @trip.date %>
+</p>
+
+<p>
+  <strong>Ltime:</strong>
+  <%= @trip.ltime %>
+</p>
+
+<p>
+  <strong>Seats:</strong>
+  <%= @trip.seats %>
+</p>
+
+<p>
+  <strong>Fare:</strong>
+  <%= @trip.fare %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @trip.user %>
+</p>
+
+<%= link_to 'Edit', edit_trip_path(@trip) %> |
+<%= link_to 'Back', trips_path %>

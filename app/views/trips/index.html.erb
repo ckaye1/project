@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+  <title>DT-Profile</title>
+  <!--Bootstrap links-->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/'>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <!--DevilTransit css link-->
+
+  <!-- Link to css -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- i've put this sytle sheet link into your code. you just have to make a file called "style.css" and you'll just have to put your css in that file" -->
+
+</head>
+
+<div class="jumbotron">
+  <div class="text-center">
+    <h1>CATCH A RIDE</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <!-- this needs to be adjusted but it says that on a "lg" page, 5 bootstrap rows will be taken by blank space on both sides
+    Leaving the content in the middle "centering" your input boxes" Just one solution. -->
+
+    <div class="col-lg-12 col-md-10 col-sm-10 col-xs-6">
+      <table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr>
+      <th class="text-center">To</th>
+      <th class="text-center">From</th>
+      <th class="text-center">Date</th>
+      <th class="text-center">Leave Time</th>
+      <th class="text-center">Seats</th>
+      <th class="text-center">Fare</th>
+      <th class="text-center">User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trips.each do |trip| %>
+      <tr>
+        <td><%= trip.to %></td>
+        <td><%= trip.from %></td>
+        <td><%= trip.date %></td>
+        <td><%= trip.ltime %></td>
+        <td><%= trip.seats %></td>
+        <td><%= trip.fare %></td>
+        <td><%= trip.user %></td>
+        <td><%= link_to 'Show', trip %></td>
+        <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
+        <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+    </div>
+  </div>
+</div>
+
+<br>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+
+<%= link_to 'New Trip', new_trip_path %>

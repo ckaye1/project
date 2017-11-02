@@ -1,0 +1,81 @@
+<%= form_for(user) do |f| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <link rel="stylesheet" href="style.css">
+
+    <div class="container">
+      <div class="row">
+        <!-- this needs to be adjusted but it says that on a "lg" page, 5 bootstrap rows will be taken by blank space on both sides
+        Leaving the content in the middle "centering" your input boxes" Just one solution. -->
+
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        </div>
+
+        <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
+          <div class="text-center">
+
+  <div class="field">
+    <%= f.text_field :email, placeholder: 'Email' %>
+  </div></br>
+
+  <div class="field">
+    <%= f.password_field :password, placeholder: 'Password (minimum 8 characters)' %>
+  </div></br>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation' %>
+  </div></br></br>
+
+  <div class="field">
+    <%= f.text_field :fname, placeholder: 'First Name' %>
+  </div></br>
+
+  <div class="field">
+    <%= f.text_field :lname, placeholder: 'Last Name' %>
+  </div></br>
+
+  <div class="field">
+    <%= f.text_field :asuid, placeholder: 'ASU ID #' %>
+  </div></br>
+
+    <h3>Optional for Signing Up for Driver</h3> </br>
+
+  <div class="field">
+    <h4>Car Year (2000 or newer)</h4></br>
+    <%= f.date_select :year, :start_year => 2000, :end_year => 2018,
+    :discard_day => true, :discard_month => true %>
+  </div></br>
+
+  <div class="field">
+    <%= f.text_field :make, placeholder: 'Make' %>
+  </div></br>
+
+  <div class="field">
+    <%= f.text_field :model, placeholder: 'Model' %>
+  </div></br>
+
+  <div class="field">
+    <%= f.text_field :driverslicense, placeholder: 'Drivers License #' %>
+  </div></br></br>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5">
+    </div>
+<% end %>

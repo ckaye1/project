@@ -1,0 +1,35 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+  <title>DT-SignUp</title>
+  <!--Bootstrap links-->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/'>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <!--DevilTransit css link-->
+
+  <!-- Link to css -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- i've put this sytle sheet link into your code. you just have to make a file called "style.css" and you'll just have to put your css in that file" -->
+
+</head>
+<style>
+  .nav {
+    background-color: #353535;
+    background-image: url("DEVILTRANSIT-LOGO.png");
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+
+</style>
+
+<div class="jumbotron">
+  <div class="text-center">
+    <h1>Sign Up</h1>
+  </div>
+</div>
+
+<%= render 'form', user: @user %>
+
+<%= link_to 'Back', users_path %>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'default', 'data-turbolinks-track': 'reload' %>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <title>DT-Home</title>
+    <!--Bootstrap links-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/'>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="dt.css">
+  </head>
+
+  <style>
+    .nav {
+      background-color: #353535;
+      background-image: url("DEVILTRANSIT-LOGO.png");
+      background-repeat: no-repeat;
+      width: 100%;
+    }
+  </style>
+
+  <body>
+  <div id="sign_ups_header">
+    <% if current_user %>
+        Logged in as <%= current_user.email %>
+        <%= link_to "Log Out", logout_path %>
+        <%= link_to "Profile", profile_path %>
+    <% else %>
+        <%= link_to "Sign Up", signup_path %> or
+        <%= link_to "Log In", login_path %>
+    <% end %>
+  </div>
+
+  <% flash.each do |key, value| %>
+<%= content_tag(:div, class: "alert alert-#{key}") do %>
+<p><%= value %></p>
+        <% end %>
+<% end %>
+
+
+    <%= yield %>
+  </body>
+</html>
